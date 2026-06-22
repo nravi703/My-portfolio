@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Computing Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <span class="nav-logo">✦ CC Portfolio</span>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Creative Computing Student</p>
+      <h1 class="hero-title">Building things at the edge of <em>art & code</em></h1>
+      <p class="hero-sub">From Python graphics to VR worlds — this is my journey through university, one project at a time.</p>
+      <a href="portfolio.html" class="btn-primary">See my work →</a>
+    </div>
+    <div class="hero-grid">
+      <div class="hg-card hg-1">🐍<span>Python Graphics</span></div>
+      <div class="hg-card hg-2">💃<span>Street Dance</span></div>
+      <div class="hg-card hg-3">🎸<span>Guitar Game</span></div>
+      <div class="hg-card hg-4">🌲<span>Lost in Forest</span></div>
+      <div class="hg-card hg-5">📚<span>Magical Library</span></div>
+      <div class="hg-card hg-6">🧠<span>Echo Chamber</span></div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="featured">
+    <h2 class="section-title">Featured projects</h2>
+    <div class="feat-grid">
+
+      <a href="portfolio.html#magical-library" class="feat-card feat-big">
+        <div class="feat-thumb" style="background: linear-gradient(135deg,#c471ed,#f64f59);"></div>
+        <div class="feat-info">
+          <span class="feat-year">Final year</span>
+          <h3>Magical Library</h3>
+          <p>A VR experience built in Unity — step inside a living, breathing library world.</p>
+          <span class="feat-tech">Unity · VR</span>
+        </div>
+      </a>
+
+      <a href="portfolio.html#echo-chamber" class="feat-card">
+        <div class="feat-thumb" style="background: linear-gradient(135deg,#4776e6,#8e54e9);"></div>
+        <div class="feat-info">
+          <span class="feat-year">Final year</span>
+          <h3>Echo Chamber</h3>
+          <p>Exploring digital echo chambers through interactive Unity experiences.</p>
+          <span class="feat-tech">Unity</span>
+        </div>
+      </a>
+
+      <a href="portfolio.html#guitar-game" class="feat-card">
+        <div class="feat-thumb" style="background: linear-gradient(135deg,#11998e,#38ef7d);"></div>
+        <div class="feat-info">
+          <span class="feat-year">Second year</span>
+          <h3>Guitar Learning Game</h3>
+          <p>An interactive website to help beginners learn guitar through play.</p>
+          <span class="feat-tech">HTML · CSS · JS</span>
+        </div>
+      </a>
+
+    </div>
+    <div class="feat-cta">
+      <a href="portfolio.html" class="btn-secondary">View all projects →</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <h2>About me</h2>
+        <p>I'm a Creative Computing student with a passion for building things that sit at the intersection of creativity and technology. From drawing with Python in my first year to building VR worlds in Unity, every project has pushed me somewhere new.</p>
+        <p>I love making digital experiences that feel alive — whether that's a website about dance culture, a guitar game, or a forest adventure built in JavaScript.</p>
+        <div class="skills-wrap">
+          <span>Python</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Unity</span><span>C#</span><span>VR</span><span>Game Design</span>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-blob"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2>Get in touch</h2>
+    <p>Interested in my work? Feel free to reach out.</p>
+    <div class="contact-links">
+      <a href="mailto:your@email.com" class="contact-item">✉ Email</a>
+      <a href="#" class="contact-item">⌥ GitHub</a>
+      <a href="#" class="contact-item">in LinkedIn</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>© 2026 · Creative Computing Portfolio · Built with HTML, CSS & JS</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

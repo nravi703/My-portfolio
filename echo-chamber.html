@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Echo Chamber — Project Detail</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #0a0a0f; color: #e0e0e0; }
+
+    .back-link {
+      display: inline-block; margin: 20px 24px;
+      color: #00cfff; text-decoration: none; font-size: 0.9rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #020b18 0%, #041428 50%, #000510 100%);
+      border-top: 1px solid #00cfff44;
+      border-bottom: 1px solid #00cfff44;
+      padding: 10px 24px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .hero-emoji { font-size: 28px; line-height: 1; flex-shrink: 0; }
+    .hero-text { display: flex; flex-direction: column; gap: 4px; }
+    .hero h1 { margin: 0; font-size: 1.4rem; color: #00cfff; }
+    .hero p.tagline { margin: 0; color: #aaa; font-size: 0.88rem; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+    .tags span {
+      background: #041428; color: #00cfff; border: 1px solid #00cfff44;
+      padding: 2px 10px; border-radius: 16px; font-size: 0.75rem; font-weight: 600;
+    }
+
+    /* ── Content ── */
+    .content { max-width: 800px; margin: 0 auto; padding: 32px 24px 80px; }
+
+    .content h2 {
+      color: #00cfff; font-size: 1.2rem; border-left: 4px solid #00cfff;
+      padding-left: 12px; margin: 36px 0 14px;
+    }
+    .content p { line-height: 1.75; color: #ccc; margin: 0 0 14px; }
+
+    /* ── Gallery (UPDATED: bigger cards, image on top, caption stacked below) ── */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 22px;
+      margin: 20px 0;
+    }
+    .gallery-item {
+      background: #0a1520;
+      border: 1px solid #00cfff33;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;   /* image always stacks ABOVE caption, never beside it */
+      text-align: center;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 280px;            /* bigger, fixed height so screenshots are easy to see */
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-item .placeholder {
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+      color: #555;
+    }
+    .gallery-item .placeholder span { font-size: 2.2rem; }
+    .gallery-item .caption {
+      padding: 12px 14px;
+      font-size: 0.92rem;
+      color: #bbb;
+      line-height: 1.5;
+      white-space: normal;      /* caption text wraps fully, never gets cut off */
+    }
+
+    /* ── Zones grid ── */
+    .zones {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px; margin: 16px 0;
+    }
+    .zone-card {
+      border-radius: 10px; padding: 16px; text-align: center;
+    }
+    .zone-card.zone1 { background: #041428; border: 1px solid #00cfff55; }
+    .zone-card.zone2 { background: #1a0a00; border: 1px solid #ff7700aa; }
+    .zone-card.zone3 { background: #0a0415; border: 1px solid #7700ffaa; }
+    .zone-card .icon { font-size: 2rem; margin-bottom: 8px; }
+    .zone-card h3 { margin: 0 0 6px; font-size: 1rem; }
+    .zone-card.zone1 h3 { color: #00cfff; }
+    .zone-card.zone2 h3 { color: #ff9933; }
+    .zone-card.zone3 h3 { color: #aa77ff; }
+    .zone-card p { margin: 0; font-size: 0.82rem; color: #999; }
+
+    /* ── Features ── */
+    .features { list-style: none; padding: 0; margin: 0 0 16px; }
+    .features li {
+      padding: 9px 14px; border-left: 3px solid #00cfff44; background: #0a1520;
+      margin-bottom: 8px; border-radius: 0 8px 8px 0; color: #ccc; font-size: 0.92rem;
+    }
+    .features li::before { content: "🔷 "; }
+
+    /* ── Tech grid ── */
+    .tech-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px; margin: 14px 0;
+    }
+    .tech-card {
+      background: #0a1520; border: 1px solid #00cfff33; border-radius: 10px;
+      padding: 14px; text-align: center;
+    }
+    .tech-card .icon { font-size: 1.8rem; margin-bottom: 6px; }
+    .tech-card h3 { margin: 0 0 4px; color: #00cfff; font-size: 0.9rem; }
+    .tech-card p { margin: 0; font-size: 0.78rem; color: #888; }
+
+    /* ── Challenges ── */
+    .challenge-block {
+      background: #111; border: 1px solid #1a1a2a; border-radius: 10px;
+      padding: 16px 20px; margin-bottom: 12px;
+    }
+    .challenge-block h3 { margin: 0 0 6px; color: #e0e0e0; font-size: 0.95rem; }
+    .challenge-block p { margin: 0; font-size: 0.88rem; color: #999; }
+  </style>
+</head>
+<body>
+
+  <a class="back-link" href="portfolio.html">← Back to Portfolio</a>
+
+  <div class="hero">
+    <div class="hero-emoji">🔊</div>
+    <div class="hero-text">
+      <h1>Echo Chamber</h1>
+      <p class="tagline">A 3D Unity narrative game — navigate three zones, place memory boxes on the correct platforms, and uncover the story.</p>
+      <div class="tags">
+        <span>Unity</span>
+        <span>C#</span>
+        <span>3D Design</span>
+        <span>Narrative</span>
+        <span>Audacity</span>
+        <span>Mixamo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>About the Project</h2>
+    <p>
+      Echo Chamber is a 3D narrative-driven game built in Unity using C#. The player navigates through
+      three distinct zones, each with its own atmosphere and challenges. In each zone, memory boxes must
+      be placed on the correct platforms — and when placed correctly, each box reveals a piece of the
+      game's storyline, gradually unfolding a narrative as you progress.
+    </p>
+    <p>
+      The game features 11 memory boxes across the three zones, a four-camera system, Mixamo character
+      animations, and sound design edited in Audacity using audio sourced from Freesound. Textures were
+      sourced from Pixabay and applied across all three environments.
+    </p>
+
+    <h2>Screenshots</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="images/echo-zone1.png" alt="Zone 1"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="placeholder" style="display:none;"><span>🔵</span><p>echo-zone1.png</p></div>
+        <div class="caption">Zone 1 — blue tech walls, ice floor, stone memory box</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/echo-zone2.png" alt="Zone 2"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="placeholder" style="display:none;"><span>🔥</span><p>echo-zone2.png</p></div>
+        <div class="caption">Zone 2 — fire theme, spike traps, glowing orange particles</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/echo-zone3.png" alt="Zone 3"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="placeholder" style="display:none;"><span>🟣</span><p>echo-zone3.png</p></div>
+        <div class="caption">Zone 3 — dark atmosphere, circuit walls, glowing platforms</div>
+      </div>
+    </div>
+    <p style="font-size:0.8rem; color:#555;">
+      💡 Save your screenshots into your <code>images/</code> folder as <code>echo-zone1.png</code>, <code>echo-zone2.png</code>, and <code>echo-zone3.png</code>.
+    </p>
+
+    <h2>The Three Zones</h2>
+    <div class="zones">
+      <div class="zone-card zone1">
+        <div class="icon">🔵</div>
+        <h3>Zone 1</h3>
+        <p>Blue circuit-patterned walls, an icy white floor, and warm-lit memory boxes. The opening zone that introduces the game's mechanics and narrative.</p>
+      </div>
+      <div class="zone-card zone2">
+        <div class="icon">🔥</div>
+        <h3>Zone 2</h3>
+        <p>A fiery orange environment with spike traps, glowing particles, and wooden platforms. A more challenging zone with greater obstacles to navigate.</p>
+      </div>
+      <div class="zone-card zone3">
+        <div class="icon">🟣</div>
+        <h3>Zone 3</h3>
+        <p>A dark, atmospheric room with deep blue circuit walls, a red glowing ceiling, and glowing blue platforms. The most intense and narrative-rich zone.</p>
+      </div>
+    </div>
+
+    <h2>How to Play</h2>
+    <ul class="features">
+      <li>Navigate through each of the three zones using your character</li>
+      <li>Find the memory boxes scattered across each zone</li>
+      <li>Place each memory box on the correct matching platform</li>
+      <li>When placed correctly, the box reveals a piece of the storyline</li>
+      <li>Collect all 11 memory boxes across the three zones to complete the narrative</li>
+      <li>Avoid obstacles like spike traps and barriers as you progress</li>
+    </ul>
+
+    <h2>Tools & Technology</h2>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="icon">🎮</div>
+        <h3>Unity</h3>
+        <p>Full 3D game built and designed in Unity</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">💻</div>
+        <h3>C#</h3>
+        <p>All game logic, interaction and camera scripts</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">🎭</div>
+        <h3>Mixamo</h3>
+        <p>Character animations imported and applied</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">🎵</div>
+        <h3>Audacity</h3>
+        <p>Sound editing using audio from Freesound</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">🖼️</div>
+        <h3>Pixabay</h3>
+        <p>Textures sourced and applied across all zones</p>
+      </div>
+      <div class="tech-card">
+        <div class="icon">📷</div>
+        <h3>4 Cameras</h3>
+        <p>Multi-camera system built in Unity</p>
+      </div>
+    </div>
+
+    <h2>Development Challenges</h2>
+    <div class="challenge-block">
+      <h3>Designing three distinct zones</h3>
+      <p>Each zone needed its own unique atmosphere and visual identity while still feeling like part of the same game. Sourcing the right Pixabay textures and lighting each zone differently was key to making them feel distinct.</p>
+    </div>
+    <div class="challenge-block">
+      <h3>Memory box placement and narrative triggers</h3>
+      <p>Writing the C# logic to detect when a memory box was placed on the correct platform and then trigger the right piece of narrative text required careful scripting of collider triggers and game state tracking across 11 boxes.</p>
+    </div>
+    <div class="challenge-block">
+      <h3>Four-camera system</h3>
+      <p>Building and switching between four cameras in Unity required understanding Unity's camera management system and scripting smooth transitions so the player always had the best view of the action.</p>
+    </div>
+    <div class="challenge-block">
+      <h3>Sound design</h3>
+      <p>Editing and layering audio clips in Audacity to match the tone of each zone — from the eerie tech atmosphere of Zone 1 to the intense fire environment of Zone 2 — required careful timing and audio balancing.</p>
+    </div>
+
+    <h2>What I Learned</h2>
+    <p>
+      Echo Chamber was my most ambitious Unity project to date. It pushed me to think about game design
+      holistically — not just the mechanics, but the narrative, atmosphere, sound, and visual design all
+      working together. I developed strong skills in C# scripting, Unity's camera and UI systems, and
+      asset management across a multi-zone environment. I also learned how to research and apply game
+      studies theory to my own design decisions, referencing theorists like Jenkins, Dourish, Bogost,
+      and Flanagan to underpin the design choices in Echo Chamber.
+    </p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

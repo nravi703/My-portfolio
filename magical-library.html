@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Magical Library — Project Detail</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #e0e0e0; }
+
+    .back-link {
+      display: inline-block; margin: 20px 24px;
+      color: #c084fc; text-decoration: none; font-size: 0.9rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #1e0a3c 0%, #2d1b69 50%, #0a0a1a 100%);
+      border-top: 1px solid #4a2080;
+      border-bottom: 1px solid #4a2080;
+      padding: 10px 24px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .hero-emoji { font-size: 28px; line-height: 1; flex-shrink: 0; }
+    .hero-text { display: flex; flex-direction: column; gap: 4px; }
+    .hero h1 { margin: 0; font-size: 1.4rem; color: #c084fc; }
+    .hero p.tagline { margin: 0; color: #aaa; font-size: 0.88rem; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+    .tags span {
+      background: #2d1b69; color: #c084fc; border: 1px solid #4a2080;
+      padding: 2px 10px; border-radius: 16px; font-size: 0.75rem; font-weight: 600;
+    }
+
+    /* ── Content ── */
+    .content { max-width: 800px; margin: 0 auto; padding: 32px 24px 80px; }
+
+    .content h2 {
+      color: #c084fc; font-size: 1.2rem; border-left: 4px solid #c084fc;
+      padding-left: 12px; margin: 36px 0 14px;
+    }
+    .content p { line-height: 1.75; color: #ccc; margin: 0 0 14px; }
+
+    /* ── Gallery ── */
+    .gallery {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px; margin: 16px 0;
+    }
+    .gallery-item {
+      background: #1a1030; border: 1px solid #4a2080; border-radius: 10px;
+      overflow: hidden; text-align: center;
+    }
+    .gallery-item img { width: 100%; display: block; }
+    .gallery-item .placeholder {
+      height: 150px; display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 6px; color: #555;
+    }
+    .gallery-item .placeholder span { font-size: 1.8rem; }
+    .gallery-item .caption { padding: 8px; font-size: 0.78rem; color: #888; }
+
+    /* ── Collectibles grid ── */
+    .collectibles {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px; margin: 16px 0;
+    }
+    .collectible-card {
+      background: #1a1030; border: 1px solid #4a2080; border-radius: 10px;
+      padding: 16px; text-align: center;
+    }
+    .collectible-card .icon { font-size: 2rem; margin-bottom: 8px; }
+    .collectible-card h3 { margin: 0 0 4px; color: #c084fc; font-size: 1rem; }
+    .collectible-card .count { font-size: 0.8rem; color: #888; margin-bottom: 6px; }
+    .collectible-card p { margin: 0; font-size: 0.82rem; color: #999; }
+
+    /* ── Features ── */
+    .features { list-style: none; padding: 0; margin: 0 0 16px; }
+    .features li {
+      padding: 9px 14px; border-left: 3px solid #4a2080; background: #1a1030;
+      margin-bottom: 8px; border-radius: 0 8px 8px 0; color: #ccc; font-size: 0.92rem;
+    }
+    .features li::before { content: "✨ "; }
+
+    /* ── Challenges ── */
+    .challenge-block {
+      background: #111; border: 1px solid #2a2a2a; border-radius: 10px;
+      padding: 16px 20px; margin-bottom: 12px;
+    }
+    .challenge-block h3 { margin: 0 0 6px; color: #e0e0e0; font-size: 0.95rem; }
+    .challenge-block p { margin: 0; font-size: 0.88rem; color: #999; }
+  </style>
+</head>
+<body>
+
+  <a class="back-link" href="portfolio.html">← Back to Portfolio</a>
+
+  <div class="detail-hero-bar"></div>
+    <div class="hero-emoji">📚</div>
+    <div class="hero-text">
+      <h1>Magical Library</h1>
+      <p class="tagline">A 3D Unity game — explore an enchanted library room and collect all the potions, crystals, and scrolls hidden inside.</p>
+      <div class="tags">
+        <span>Unity</span>
+        <span>C#</span>
+        <span>3D Design</span>
+        <span>Game Dev</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>About the Project</h2>
+    <p>
+      Magical Library is a 3D first-person game built in Unity using C#. The player is placed inside
+      an enchanted library room filled with mystical objects — glowing crystals, towering potions,
+      and ancient scrolls. The goal is to explore the room and collect all the items before the game ends.
+    </p>
+    <p>
+      This was built as part of a 3D game design module, focusing on object interaction, player movement,
+      and HUD display in Unity. The environment was designed and scripted entirely from scratch using
+      Unity's game engine and C# scripting.
+    </p>
+
+    <h2>Screenshots</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="images/library-gameplay.png" alt="Magical Library gameplay"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="placeholder" style="display:none;"><span>📚</span><p>library-gameplay.png</p></div>
+        <div class="caption">The magical library room with collectible items scattered around</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/library-hud.png" alt="Library HUD"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="placeholder" style="display:none;"><span>🎮</span><p>library-hud.png</p></div>
+        <div class="caption">The HUD tracking Potions, Crystals, and Scrolls collected</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/library-items.png" alt="Collectible items"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="placeholder" style="display:none;"><span>🔮</span><p>library-items.png</p></div>
+        <div class="caption">Close-up of the potions, crystals, and scrolls to collect</div>
+      </div>
+    </div>
+    <p style="font-size:0.8rem; color:#555;">
+      💡 Save screenshots into your <code>images/</code> folder as <code>library-gameplay.png</code>, <code>library-hud.png</code>, and <code>library-items.png</code>.
+    </p>
+
+    <h2>Collectibles</h2>
+    <div class="collectibles">
+      <div class="collectible-card">
+        <div class="icon">🧪</div>
+        <h3>Potions</h3>
+        <div class="count">4 to collect</div>
+        <p>Purple cylindrical potions placed around the library room</p>
+      </div>
+      <div class="collectible-card">
+        <div class="icon">💎</div>
+        <h3>Crystals</h3>
+        <div class="count">4 to collect</div>
+        <p>Glowing teal spheres floating throughout the environment</p>
+      </div>
+      <div class="collectible-card">
+        <div class="icon">📜</div>
+        <h3>Scrolls</h3>
+        <div class="count">2 to collect</div>
+        <p>Ancient red scrolls hidden around the walls of the library</p>
+      </div>
+    </div>
+
+    <h2>How to Play</h2>
+    <ul class="features">
+      <li>Explore the 3D magical library room in first person</li>
+      <li>Walk around and collect all the potions scattered across the room</li>
+      <li>Find and collect all 4 glowing crystals</li>
+      <li>Locate and pick up both ancient scrolls</li>
+      <li>Track your progress using the HUD counter on screen</li>
+      <li>Collect everything to complete the game</li>
+    </ul>
+
+    <h2>Development Challenges</h2>
+    <div class="challenge-block">
+      <h3>3D environment design in Unity</h3>
+      <p>Designing the library room from scratch in Unity required learning how to place, scale, and light 3D objects effectively to create an atmospheric environment that felt like a real space.</p>
+    </div>
+    <div class="challenge-block">
+      <h3>Object collection with C#</h3>
+      <p>Writing the C# scripts to detect when the player walks into a collectible, remove it from the scene, and update the HUD counter in real time was a key technical challenge of the project.</p>
+    </div>
+    <div class="challenge-block">
+      <h3>HUD and game state</h3>
+      <p>Displaying the live Potions, Crystals, and Scrolls count on screen required linking Unity's UI system to the game state scripts — making sure the numbers updated correctly each time an item was collected.</p>
+    </div>
+
+    <h2>What I Learned</h2>
+    <p>
+      This project taught me the fundamentals of 3D game development in Unity — from designing and populating
+      a scene to writing C# scripts for player interaction and UI updates. It gave me hands-on experience
+      with Unity's component system, collider triggers, and canvas UI, which are core skills for any
+      future game development work.
+    </p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

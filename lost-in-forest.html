@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lost in Forest — Project Detail</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #e0e0e0; }
+
+    .back-link {
+      display: inline-block; margin: 20px 24px;
+      color: #7dff7d; text-decoration: none; font-size: 0.9rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #1a3a1a 0%, #0d1f0d 60%, #000 100%);
+      border-top: 1px solid #2a5a2a;
+      border-bottom: 1px solid #2a5a2a;
+      padding: 10px 24px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .hero-emoji { font-size: 28px; line-height: 1; flex-shrink: 0; }
+    .hero-text { display: flex; flex-direction: column; gap: 4px; }
+    .hero h1 { margin: 0; font-size: 1.4rem; color: #7dff7d; }
+    .hero p.tagline { margin: 0; color: #aaa; font-size: 0.88rem; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+    .tags span {
+      background: #1e3d1e; color: #7dff7d; border: 1px solid #3a6e3a;
+      padding: 2px 10px; border-radius: 16px; font-size: 0.75rem; font-weight: 600;
+    }
+
+    /* ── Content ── */
+    .content { max-width: 860px; margin: 0 auto; padding: 32px 24px 80px; }
+
+    .content h2 {
+      color: #7dff7d; font-size: 1.2rem; border-left: 4px solid #7dff7d;
+      padding-left: 12px; margin: 36px 0 14px;
+    }
+    .content p { line-height: 1.75; color: #ccc; margin: 0 0 14px; }
+
+    /* ── Gallery ── */
+    .gallery {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px; margin: 16px 0;
+    }
+    .gallery-item {
+      background: #1a2a1a; border: 1px solid #2a5a2a; border-radius: 10px;
+      overflow: hidden; text-align: center;
+    }
+    .gallery-item img { width: 100%; display: block; }
+    .gallery-item .placeholder {
+      height: 150px; display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 6px; color: #555;
+    }
+    .gallery-item .placeholder span { font-size: 1.8rem; }
+    .gallery-item .caption { padding: 8px; font-size: 0.78rem; color: #888; }
+
+    /* ── Features ── */
+    .features { list-style: none; padding: 0; margin: 0 0 16px; }
+    .features li {
+      padding: 9px 14px; border-left: 3px solid #3a6e3a; background: #141f14;
+      margin-bottom: 8px; border-radius: 0 8px 8px 0; color: #ccc; font-size: 0.92rem;
+    }
+    .features li::before { content: "🌲 "; }
+
+    /* ── HUD grid ── */
+    .hud-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px; margin: 16px 0;
+    }
+    .hud-card {
+      background: #141f14; border: 1px solid #2a5a2a; border-radius: 10px;
+      padding: 16px; text-align: center;
+    }
+    .hud-card .icon { font-size: 2rem; margin-bottom: 8px; }
+    .hud-card h3 { margin: 0 0 6px; color: #7dff7d; font-size: 0.95rem; }
+    .hud-card p { margin: 0; font-size: 0.82rem; color: #888; }
+
+    /* ── Challenges ── */
+    .challenge-block {
+      background: #111; border: 1px solid #2a2a2a; border-radius: 10px;
+      padding: 16px 20px; margin-bottom: 12px;
+    }
+    .challenge-block h3 { margin: 0 0 6px; color: #e0e0e0; font-size: 0.95rem; }
+    .challenge-block p { margin: 0; font-size: 0.88rem; color: #999; }
+  </style>
+</head>
+<body>
+
+  <a class="back-link" href="portfolio.html">← Back to Portfolio</a>
+
+  <div class="detail-hero-bar"></div>
+    <div class="hero-emoji">🌲</div>
+    <div class="hero-text">
+      <h1>Lost in Forest</h1>
+      <p class="tagline">A 3D survival browser game — find the lanterns, dodge the dog, and escape the traps before your life runs out.</p>
+      <div class="tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>3D Game</span>
+        <span>Survival</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>About the Project</h2>
+    <p>
+      Lost in Forest is a first-person 3D browser game built entirely with HTML, CSS, and JavaScript.
+      The player is dropped into a misty, eerie forest and must survive by collecting glowing lanterns
+      scattered across the environment. Standing in the way are hidden traps and a relentless black dog
+      with glowing red eyes that hunts you down — draining your life on contact.
+    </p>
+    <p>
+      The challenge was creating a genuinely tense and atmospheric experience using only vanilla web
+      technologies, without any game engine. Everything from the 3D trees and fog to the enemy AI
+      and collision detection was coded from scratch.
+    </p>
+
+    <h2>Screenshots</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="images/forest-gameplay.png" alt="Forest gameplay screenshot"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="placeholder" style="display:none;"><span>🌲</span><p>forest-gameplay.png</p></div>
+        <div class="caption">The forest environment — misty atmosphere with scattered trees</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/forest-dog.png" alt="The dog enemy"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="placeholder" style="display:none;"><span>🐕</span><p>forest-dog.png</p></div>
+        <div class="caption">The dog enemy — red-eyed and relentless</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/forest-lantern.png" alt="Lantern collectible"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="placeholder" style="display:none;"><span>🏮</span><p>forest-lantern.png</p></div>
+        <div class="caption">Yellow lanterns to collect — your key to surviving</div>
+      </div>
+    </div>
+    <p style="font-size:0.8rem; color:#555;">
+      💡 Save screenshots as <code>images/forest-gameplay.png</code>, <code>images/forest-dog.png</code>, and <code>images/forest-lantern.png</code>.
+    </p>
+
+    <h2>How to Play</h2>
+    <ul class="features">
+      <li>Explore the 3D forest and find all the glowing lanterns</li>
+      <li>Collect each lantern to add it to your inventory and progress</li>
+      <li>Avoid the black dog — it chases you and drains your life on contact</li>
+      <li>Watch out for hidden traps scattered across the forest floor</li>
+      <li>Keep an eye on your life bar — reach zero and it's game over</li>
+      <li>Survive long enough to collect all the lanterns and escape</li>
+    </ul>
+
+    <h2>Game HUD</h2>
+    <div class="hud-grid">
+      <div class="hud-card">
+        <div class="icon">🏮</div>
+        <h3>Inventory</h3>
+        <p>Tracks the lanterns you have collected so far</p>
+      </div>
+      <div class="hud-card">
+        <div class="icon">❤️</div>
+        <h3>Life Bar</h3>
+        <p>Starts at 100 — reduced by the dog and traps</p>
+      </div>
+      <div class="hud-card">
+        <div class="icon">📓</div>
+        <h3>Journal</h3>
+        <p>Narrative messages that guide your journey through the forest</p>
+      </div>
+    </div>
+
+    <h2>Development Challenges</h2>
+    <div class="challenge-block">
+      <h3>Building 3D without a game engine</h3>
+      <p>Creating a convincing 3D forest environment in a browser using only JavaScript was the biggest challenge. Rendering trees, fog, and a ground plane — plus making the camera move in 3D space — required learning how perspective and depth work at a code level.</p>
+    </div>
+    <div class="challenge-block">
+      <h3>Enemy AI and collision</h3>
+      <p>Making the dog chase the player involved writing a simple tracking algorithm that updates the dog's position each frame to move toward the player's coordinates. Collision detection for both the dog and the traps also had to be handled manually.</p>
+    </div>
+    <div class="challenge-block">
+      <h3>Atmosphere and tone</h3>
+      <p>Getting the right eerie feeling — the grey fog, the dark low-poly trees, the glowing red eyes on the dog — was an intentional design choice to make the game feel genuinely unsettling despite its simple visual style.</p>
+    </div>
+
+    <h2>What I Learned</h2>
+    <p>
+      This project pushed my JavaScript skills further than any previous project. I learned how to
+      structure a real-time game loop, handle keyboard input for movement, manage game state (life,
+      inventory, win/lose conditions), and create a 3D visual experience without any external libraries.
+      It also taught me how much atmosphere can be built through simple design choices — colour, fog,
+      and lighting go a long way even with low-poly shapes.
+    </p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
