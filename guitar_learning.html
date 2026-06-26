@@ -5,24 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Guitar Learning Game — Project Detail</title>
 
-  <link rel="stylesheet" href="guitar.css" />
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #e0e0e0; }
+
+    .back-link {
+      display: inline-block; margin: 20px 24px;
+      color: #38ef7d; text-decoration: none; font-size: 0.9rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    .hero {
+      background: linear-gradient(135deg, #042b1a 0%, #0a4d2e 50%, #000 100%);
+      border-top: 1px solid #38ef7d44;
+      border-bottom: 1px solid #38ef7d44;
+      padding: 10px 24px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .hero-emoji { font-size: 28px; line-height: 1; flex-shrink: 0; }
+    .hero-text { display: flex; flex-direction: column; gap: 4px; }
+    .hero h1 { margin: 0; font-size: 1.4rem; color: #38ef7d; }
+    .hero p.tagline { margin: 0; color: #aaa; font-size: 0.88rem; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+    .tags span {
+      background: #06301d; color: #38ef7d; border: 1px solid #38ef7d44;
+      padding: 2px 10px; border-radius: 16px; font-size: 0.75rem; font-weight: 600;
+    }
+
+    .content { max-width: 800px; margin: 0 auto; padding: 32px 24px 80px; }
+
+    .content h2 {
+      color: #38ef7d; font-size: 1.2rem; border-left: 4px solid #38ef7d;
+      padding-left: 12px; margin: 36px 0 14px;
+    }
+    .content p { line-height: 1.75; color: #ccc; margin: 0 0 14px; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 16px 0;
+    }
+    .gallery-item {
+      background: #11201a; border: 1px solid #38ef7d33; border-radius: 10px;
+      overflow: hidden; text-align: center;
+    }
+    .gallery-item img { width: 100%; display: block; }
+    .gallery-item .placeholder {
+      height: 150px; display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 6px; color: #555;
+    }
+    .gallery-item .placeholder span { font-size: 1.8rem; }
+    .gallery-item .caption { padding: 10px 12px; font-size: 0.85rem; color: #999; }
+
+    .hud-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px; margin: 16px 0;
+    }
+    .hud-card {
+      background: #11201a; border: 1px solid #38ef7d33; border-radius: 10px;
+      padding: 16px; text-align: center;
+    }
+    .hud-card .icon { font-size: 1.8rem; margin-bottom: 6px; }
+    .hud-card h3 { margin: 0 0 4px; color: #38ef7d; font-size: 0.95rem; }
+    .hud-card p { margin: 0; font-size: 0.8rem; color: #888; }
+
+    .features { list-style: none; padding: 0; margin: 0 0 16px; }
+    .features li {
+      padding: 9px 14px; border-left: 3px solid #38ef7d44; background: #11201a;
+      margin-bottom: 8px; border-radius: 0 8px 8px 0; color: #ccc; font-size: 0.92rem;
+    }
+    .features li::before { content: "🎶 "; }
+
+    .challenge-block {
+      background: #111; border: 1px solid #1a2a1a; border-radius: 10px;
+      padding: 16px 20px; margin-bottom: 12px;
+    }
+    .challenge-block h3 { margin: 0 0 6px; color: #e0e0e0; font-size: 0.95rem; }
+    .challenge-block p { margin: 0; font-size: 0.88rem; color: #999; }
+  </style>
 </head>
 
 <body>
 
-  <a class="back-link" href="../portfolio.html">← Back to Portfolio</a>
+  <a class="back-link" href="portfolio.html">← Back to Portfolio</a>
 
-  <!-- HERO BAR -->
   <div class="hero">
     <div class="hero-emoji">🎸</div>
-
     <div class="hero-text">
       <h1>Guitar Learning Game</h1>
       <p class="tagline">
         A neon‑styled rhythm game where players follow notes, fret chords, and receive real‑time scoring and feedback.
       </p>
-
       <div class="tags">
         <span>HTML</span>
         <span>CSS</span>
@@ -49,21 +128,21 @@
     <h2>Screenshots</h2>
     <div class="gallery">
       <div class="gallery-item">
-        <img src="../images/guitar-gameplay.png" alt="Gameplay Screenshot"
+        <img src="images/guitar-gameplay.png" alt="Gameplay Screenshot"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
         <div class="placeholder" style="display:none;"><span>🎸</span><p>guitar-gameplay.png</p></div>
         <div class="caption">Gameplay — follow the coloured notes and hit them in time</div>
       </div>
 
       <div class="gallery-item">
-        <img src="../images/guitar-gameover.png" alt="Game Over Screenshot"
+        <img src="images/guitar-gameover.png" alt="Game Over Screenshot"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
         <div class="placeholder" style="display:none;"><span>💀</span><p>guitar-gameover.png</p></div>
         <div class="caption">Game Over screen — score summary and accuracy breakdown</div>
       </div>
 
       <div class="gallery-item">
-        <img src="../images/guitar-fretboard.png" alt="Fretboard Screenshot"
+        <img src="images/guitar-fretboard.png" alt="Fretboard Screenshot"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
         <div class="placeholder" style="display:none;"><span>🎵</span><p>guitar-fretboard.png</p></div>
         <div class="caption">Digital fretboard — shows finger positions and chord shapes</div>
@@ -134,5 +213,6 @@
 
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
