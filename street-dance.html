@@ -5,8 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Street Dance vs Traditional Dancing — Creative Computing Portfolio</title>
 
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    .detail-hero {
+      background: linear-gradient(135deg, #2b0a1f 0%, #4d0f33 50%, #1a0a14 100%);
+      padding: 60px 40px 40px;
+      border-bottom: 1px solid #f5576c44;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #f5576c;
+      text-decoration: none;
+      margin-bottom: 28px;
+    }
+    .back-link:hover { text-decoration: underline; }
+    .detail-year {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #f5576c;
+      margin-bottom: 10px;
+    }
+    .detail-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 5vw, 44px);
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    .detail-subtitle {
+      font-size: 16px;
+      color: #ccc;
+      max-width: 640px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .tech-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tech-badge {
+      background: #f5576c22;
+      color: #f5576c;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 30px;
+    }
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #e0e0e0; }
+    .detail-body { max-width: 860px; margin: 0 auto; padding: 50px 24px 80px; }
+    .info-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px; margin-bottom: 40px;
+    }
+    .info-card {
+      background: #1a1015; border: 1px solid #f5576c33; border-radius: 10px;
+      padding: 14px;
+    }
+    .info-card .label {
+      font-size: 11px; font-weight: 500; text-transform: uppercase;
+      letter-spacing: 0.08em; color: #888; margin-bottom: 6px;
+    }
+    .info-card .value { font-size: 14px; color: #e0e0e0; font-weight: 500; }
+    .section-block { margin-bottom: 44px; }
+    .section-block h2 {
+      color: #f5576c; font-size: 1.2rem; border-left: 4px solid #f5576c;
+      padding-left: 12px; margin: 0 0 14px;
+    }
+    .section-block p { line-height: 1.75; color: #ccc; margin: 0 0 14px; }
+    .section-block ul { color: #ccc; line-height: 1.8; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 16px 0;
+    }
+    .gallery-item {
+      background: #1a1015; border: 1px solid #f5576c33; border-radius: 10px;
+      overflow: hidden;
+    }
+    .gallery-item img { width: 100%; display: block; }
+  </style>
 </head>
 
 <body>
@@ -14,16 +95,16 @@
   <nav class="nav">
     <span class="nav-logo">✦ CC Portfolio</span>
     <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../portfolio.html" class="active">Portfolio</a></li>
-      <li><a href="../index.html#about">About</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <button class="nav-toggle">☰</button>
   </nav>
 
   <div class="detail-hero">
-    <a href="../portfolio.html" class="back-link">← Back to all projects</a>
+    <a href="portfolio.html" class="back-link">← Back to all projects</a>
 
     <div class="detail-year">First Year</div>
 
@@ -86,24 +167,20 @@
     </div>
 
     <div class="section-block">
-  <h2>Preview Images</h2>
-  <p>Here are a few screenshots from the project:</p>
+      <h2>Preview Images</h2>
+      <p>Here are a few screenshots from the project:</p>
 
-  <div class="gallery no-click">
-    <div class="gallery-item no-click">
-      <img src="../images/introduction.jpg" alt="Introduction Screenshot">
-    </div>
-
-  <div class="gallery no-click">
-    <div class="gallery-item no-click">
-      <img src="../images/street-dance.jpg" alt="Street Dance Screenshot">
-    </div>
-
-    <div class="gallery-item no-click">
-      <img src="../images/tamil-dance.jpg" alt="Tamil Dance Screenshot">
-    </div>
-  </div>
-</div>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="images/introduction.jpg" alt="Introduction Screenshot">
+        </div>
+        <div class="gallery-item">
+          <img src="images/street-dance.jpg" alt="Street Dance Screenshot">
+        </div>
+        <div class="gallery-item">
+          <img src="images/tamil-dance.jpg" alt="Tamil Dance Screenshot">
+        </div>
+      </div>
     </div>
 
   </div>
@@ -112,6 +189,6 @@
     <span>© 2026 · Creative Computing Portfolio · Built with HTML, CSS & JS</span>
   </footer>
 
-  <script src="../script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
