@@ -2,113 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guitar Learning Game — Creative Computing Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guitar Learning Game — Project Detail</title>
 
-  <link rel="stylesheet" href="../style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="guitar.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 
 <body>
 
-  <nav class="nav">
-    <span class="nav-logo">✦ CC Portfolio</span>
-    <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../portfolio.html" class="active">Portfolio</a></li>
-      <li><a href="../index.html#about">About</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
-    </ul>
-    <button class="nav-toggle">☰</button>
-  </nav>
+  <a class="back-link" href="../portfolio.html">← Back to Portfolio</a>
 
-  <div class="detail-hero">
-    <a href="../portfolio.html" class="back-link">← Back to all projects</a>
+  <!-- HERO BAR -->
+  <div class="hero">
+    <div class="hero-emoji">🎸</div>
 
-    <div class="detail-year">Second Year</div>
+    <div class="hero-text">
+      <h1>Guitar Learning Game</h1>
+      <p class="tagline">
+        A neon‑styled rhythm game where players follow notes, fret chords, and receive real‑time scoring and feedback.
+      </p>
 
-    <h1 class="detail-title">Guitar Learning Game</h1>
+      <div class="tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Rhythm Game</span>
+        <span>Music Learning</span>
+      </div>
+    </div>
+  </div>
 
-    <p class="detail-subtitle">
-      A rhythm‑based learning game where players follow musical notes, fret chords, and receive real‑time scoring and feedback.
+  <div class="content">
+
+    <h2>About the Project</h2>
+    <p>
+      Guitar Learning Game is a browser‑based rhythm game designed to help beginners practise musical notes,
+      timing, and chord positions. Players follow coloured notes on a scrolling grid, press the correct keys,
+      and receive instant feedback such as Perfect, Good, or Miss.
+    </p>
+    <p>
+      The game includes a digital fretboard, a scoring system, a game‑over screen, and keyboard‑based controls
+      for fretting and finger movement. The neon aesthetic is inspired by arcade rhythm games.
     </p>
 
-    <div class="tech-row">
-      <span class="tech-badge">HTML</span>
-      <span class="tech-badge">CSS</span>
-      <span class="tech-badge">JavaScript</span>
+    <h2>Screenshots</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="../images/guitar-gameplay.png" alt="Gameplay Screenshot"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="placeholder" style="display:none;"><span>🎸</span><p>guitar-gameplay.png</p></div>
+        <div class="caption">Gameplay — follow the coloured notes and hit them in time</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="../images/guitar-gameover.png" alt="Game Over Screenshot"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="placeholder" style="display:none;"><span>💀</span><p>guitar-gameover.png</p></div>
+        <div class="caption">Game Over screen — score summary and accuracy breakdown</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="../images/guitar-fretboard.png" alt="Fretboard Screenshot"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="placeholder" style="display:none;"><span>🎵</span><p>guitar-fretboard.png</p></div>
+        <div class="caption">Digital fretboard — shows finger positions and chord shapes</div>
+      </div>
     </div>
+
+    <h2>How to Play</h2>
+    <ul class="features">
+      <li>Watch the scrolling notes and press the matching keys</li>
+      <li>Hit notes in time to score Perfect, Good, or Miss</li>
+      <li>Use keyboard controls to fret chords and move fingers</li>
+      <li>Reach the end of the song to see your final score</li>
+      <li>Try to beat your high score and improve accuracy</li>
+    </ul>
+
+    <h2>Game HUD</h2>
+    <div class="hud-grid">
+      <div class="hud-card">
+        <div class="icon">🎵</div>
+        <h3>Note Grid</h3>
+        <p>Scrolling coloured notes that the player must hit</p>
+      </div>
+
+      <div class="hud-card">
+        <div class="icon">🎚️</div>
+        <h3>Fretboard</h3>
+        <p>Shows finger positions and chord shapes</p>
+      </div>
+
+      <div class="hud-card">
+        <div class="icon">⭐</div>
+        <h3>Score System</h3>
+        <p>Perfect / Good / Miss feedback in real time</p>
+      </div>
+    </div>
+
+    <h2>Development Challenges</h2>
+    <div class="challenge-block">
+      <h3>Timing & Accuracy Detection</h3>
+      <p>
+        Building a precise timing system required syncing note positions with the game loop and calculating
+        hit windows for Perfect, Good, and Miss.
+      </p>
+    </div>
+
+    <div class="challenge-block">
+      <h3>Neon Rhythm Aesthetic</h3>
+      <p>
+        Creating a clean neon look involved experimenting with bright colours, glow effects, and a dark UI
+        that matched the arcade rhythm‑game style.
+      </p>
+    </div>
+
+    <div class="challenge-block">
+      <h3>Keyboard‑Based Controls</h3>
+      <p>
+        Mapping fretting and finger movement to keyboard keys required careful input handling to ensure
+        responsiveness and accuracy.
+      </p>
+    </div>
+
+    <h2>What I Learned</h2>
+    <p>
+      This project strengthened my JavaScript skills, especially in real‑time game loops, input handling,
+      and UI feedback systems. I also learned how to design a consistent neon visual identity that enhances
+      gameplay clarity.
+    </p>
+
   </div>
 
-  <div class="detail-body">
-
-    <div class="info-grid">
-      <div class="info-card">
-        <div class="label">Year</div>
-        <div class="value">Second Year</div>
-      </div>
-
-      <div class="info-card">
-        <div class="label">Technologies</div>
-        <div class="value">HTML, CSS, JavaScript</div>
-      </div>
-
-      <div class="info-card">
-        <div class="label">Type</div>
-        <div class="value">Interactive Game</div>
-      </div>
-
-      <div class="info-card">
-        <div class="label">Focus</div>
-        <div class="value">Music Learning & Gameplay</div>
-      </div>
-    </div>
-
-    <div class="section-block">
-      <h2>Project Overview</h2>
-      <p>
-        This project is a guitar‑learning rhythm game designed to help beginners practise musical notes, timing, and chord positions. Players follow on‑screen notes, press the correct keys to fret chords, and receive instant feedback based on accuracy.
-      </p>
-
-      <p>The game includes:</p>
-
-      <ul>
-        <li>A note‑reading gameplay screen with Perfect/Good/Miss scoring</li>
-        <li>A digital guitar fretboard showing finger positions</li>
-        <li>A GAME OVER screen with leaderboard and score summary</li>
-        <li>Keyboard controls for fretting and finger movement</li>
-      </ul>
-
-      <p>
-        The aim was to combine interactive gameplay with music education, creating a fun and accessible tool for learning basic guitar skills.
-      </p>
-    </div>
-
-    <div class="section-block">
-      <h2>Preview Images</h2>
-      <p>Here are a few screenshots from the project:</p>
-
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="../images/guitar-gameplay.png" alt="Gameplay Screenshot">
-        </div>
-
-        <div class="gallery-item">
-          <img src="../images/guitar-gameover.png" alt="Game Over Screenshot">
-        </div>
-
-        <div class="gallery-item">
-          <img src="../images/guitar-fretboard.png" alt="Fretboard Screenshot">
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <footer class="footer">
-    <span>© 2026 · Creative Computing Portfolio · Built with HTML, CSS & JS</span>
-  </footer>
-
-  <script src="../script.js"></script>
 </body>
 </html>
