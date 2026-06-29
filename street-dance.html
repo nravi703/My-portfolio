@@ -76,17 +76,23 @@
     }
     .section-block p { line-height: 1.75; color: #ccc; margin: 0 0 14px; }
     .section-block ul { color: #ccc; line-height: 1.8; }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
+    .video-wrap {
+      background: #1a1015;
+      border: 1px solid #f5576c33;
+      border-radius: 10px;
+      overflow: hidden;
       margin: 16px 0;
     }
-    .gallery-item {
-      background: #1a1015; border: 1px solid #f5576c33; border-radius: 10px;
-      overflow: hidden;
+    .video-wrap video {
+      width: 100%;
+      display: block;
     }
-    .gallery-item img { width: 100%; display: block; }
+    .video-caption {
+      font-size: 13px;
+      color: #999;
+      padding: 12px 16px;
+      border-top: 1px solid #f5576c22;
+    }
   </style>
 </head>
 
@@ -167,19 +173,15 @@
     </div>
 
     <div class="section-block">
-      <h2>Preview Images</h2>
-      <p>Here are a few screenshots from the project:</p>
+      <h2>Project Walkthrough</h2>
+      <p>A quick walkthrough of the site, moving through the Introduction, Traditional Tamil Dance, Traditional Hindi Dance, Traditional Telugu Dance, and Traditional Malayalam Dance pages.</p>
 
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="images/introduction.jpg" alt="Introduction Screenshot">
-        </div>
-        <div class="gallery-item">
-          <img src="images/street-dance.jpg" alt="Street Dance Screenshot">
-        </div>
-        <div class="gallery-item">
-          <img src="images/tamil-dance.jpg" alt="Tamil Dance Screenshot">
-        </div>
+      <div class="video-wrap">
+        <video controls poster="images/introduction.jpg">
+          <source src="videos/site-walkthrough.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-caption">Walkthrough: Introduction → Tamil → Hindi → Telugu → Malayalam dance pages</div>
       </div>
     </div>
 
