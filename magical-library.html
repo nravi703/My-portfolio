@@ -53,14 +53,24 @@
     .gallery-item {
       background: #1a1030; border: 1px solid #4a2080; border-radius: 10px;
       overflow: hidden; text-align: center;
+      display: flex;
+      flex-direction: column;
     }
-    .gallery-item img { width: 100%; display: block; }
+    .gallery-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }
     .gallery-item .placeholder {
       height: 150px; display: flex; align-items: center; justify-content: center;
       flex-direction: column; gap: 6px; color: #555;
     }
     .gallery-item .placeholder span { font-size: 1.8rem; }
-    .gallery-item .caption { padding: 8px; font-size: 0.78rem; color: #888; }
+    .gallery-item .caption {
+      padding: 8px; font-size: 0.78rem; color: #888;
+      flex-shrink: 0;
+    }
 
     /* ── Collectibles grid ── */
     .collectibles {
@@ -97,7 +107,7 @@
 
   <a class="back-link" href="portfolio.html">← Back to Portfolio</a>
 
-  <div class="detail-hero-bar"></div>
+  <div class="hero">
     <div class="hero-emoji">📚</div>
     <div class="hero-text">
       <h1>Magical Library</h1>
